@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "Session.h"
 
 @interface ViewController ()
 
@@ -22,6 +23,12 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)setDifficultyLevel:(id)sender {
+    UIButton *button = (UIButton *)sender;
+    NSString *difficulty = [[button titleLabel] text];
+    [Session setDifficultyLevel:difficulty];
 }
 
 @end

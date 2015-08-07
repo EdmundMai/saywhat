@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		812421071B75471F00868CE9 /* Session.h in Sources */ = {isa = PBXBuildFile; fileRef = 812421061B75471F00868CE9 /* Session.h */; };
+		812421091B7547E700868CE9 /* Session.m in Sources */ = {isa = PBXBuildFile; fileRef = 812421081B7547E700868CE9 /* Session.m */; };
 		81E542C41B6EFCCE0088D901 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 81E542C31B6EFCCE0088D901 /* main.m */; };
 		81E542C71B6EFCCE0088D901 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 81E542C61B6EFCCE0088D901 /* AppDelegate.m */; };
 		81E542CA1B6EFCCE0088D901 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81E542C91B6EFCCE0088D901 /* ViewController.m */; };
@@ -27,6 +29,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		812421061B75471F00868CE9 /* Session.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Session.h; sourceTree = "<group>"; };
+		812421081B7547E700868CE9 /* Session.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Session.m; sourceTree = "<group>"; };
 		81E542BE1B6EFCCE0088D901 /* saywhat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = saywhat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81E542C21B6EFCCE0088D901 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		81E542C31B6EFCCE0088D901 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -60,6 +64,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		812421051B7546FE00868CE9 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				812421061B75471F00868CE9 /* Session.h */,
+				812421081B7547E700868CE9 /* Session.m */,
+			);
+			name = models;
+			sourceTree = "<group>";
+		};
 		81E542B51B6EFCCD0088D901 = {
 			isa = PBXGroup;
 			children = (
@@ -81,8 +94,7 @@
 		81E542C01B6EFCCE0088D901 /* saywhat */ = {
 			isa = PBXGroup;
 			children = (
-				81E542C51B6EFCCE0088D901 /* AppDelegate.h */,
-				81E542C61B6EFCCE0088D901 /* AppDelegate.m */,
+				812421051B7546FE00868CE9 /* models */,
 				81E542C81B6EFCCE0088D901 /* ViewController.h */,
 				81E542C91B6EFCCE0088D901 /* ViewController.m */,
 				81E542CB1B6EFCCE0088D901 /* Main.storyboard */,
@@ -96,6 +108,8 @@
 		81E542C11B6EFCCE0088D901 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				81E542C51B6EFCCE0088D901 /* AppDelegate.h */,
+				81E542C61B6EFCCE0088D901 /* AppDelegate.m */,
 				81E542C21B6EFCCE0088D901 /* Info.plist */,
 				81E542C31B6EFCCE0088D901 /* main.m */,
 			);
@@ -219,6 +233,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				812421071B75471F00868CE9 /* Session.h in Sources */,
+				812421091B7547E700868CE9 /* Session.m in Sources */,
 				81E542CA1B6EFCCE0088D901 /* ViewController.m in Sources */,
 				81E542C71B6EFCCE0088D901 /* AppDelegate.m in Sources */,
 				81E542C41B6EFCCE0088D901 /* main.m in Sources */,
@@ -416,6 +432,7 @@
 				81E542E31B6EFCCE0088D901 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		81E542E41B6EFCCE0088D901 /* Build configuration list for PBXNativeTarget "saywhatTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +441,7 @@
 				81E542E61B6EFCCE0088D901 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
