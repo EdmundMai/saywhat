@@ -12,6 +12,8 @@
 
 @interface DifficultyLevelViewController ()
 
+@property (weak, nonatomic) GameManager *gameManager;
+
 @end
 
 @implementation DifficultyLevelViewController
@@ -19,12 +21,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.navigationController setNavigationBarHidden:YES];
-    // Do any additional setup after loading the view, typically from a nib.
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void) viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    self.gameManager = [GameManager sharedInstance];
+    self.gameManager.players = [[NSMutableArray alloc] init];
 }
 
 - (IBAction)setDifficultyLevel:(id)sender {
@@ -36,9 +38,8 @@
     NSArray *questions = @[@"What is your favorite animal?",
                            @"What is cooler than school?"];
     
-    GameManager *gameManager = [GameManager sharedInstance];
-    gameManager.difficultyLevel = difficultyLevel;
-    gameManager.questions = questions;
+    self.gameManager.difficultyLevel = difficultyLevel;
+    self.gameManager.questions = questions;
 }
 
 @end

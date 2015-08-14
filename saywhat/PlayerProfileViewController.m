@@ -13,20 +13,18 @@
 @interface PlayerProfileViewController ()
 
 @property (weak, nonatomic) IBOutlet UIButton *startButton;
+@property (weak, nonatomic) GameManager *gameManager;
 
 @end
 
 @implementation PlayerProfileViewController
 
-- (GameManager *)gameManager {
-    return [GameManager sharedInstance];
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.navigationController setNavigationBarHidden:YES];
+    self.gameManager = [GameManager sharedInstance];
     
-    if ([[self gameManager].players count] < 3) {
+    if ([self.gameManager.players count] < 1) {
         self.startButton.hidden = YES;
     }
 }
@@ -35,7 +33,7 @@
     NSString *name = [self.nameTextField text];
     Player *newPlayer = [[Player alloc] init];
     newPlayer.name = name;
-    [[self gameManager].players addObject:newPlayer];
+    [self.gameManager.players addObject:newPlayer];
 }
 
 @end

@@ -11,6 +11,7 @@
 		815A2F011B7E3F5200B03DE0 /* GameManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 815A2F001B7E3F5200B03DE0 /* GameManager.m */; };
 		815A2F041B7E472700B03DE0 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 815A2F031B7E472700B03DE0 /* Player.m */; };
 		815A2F081B7E729600B03DE0 /* QuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 815A2F071B7E729600B03DE0 /* QuestionViewController.m */; };
+		815A2F0A1B7E9FD600B03DE0 /* AnswerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 815A2F091B7E9FD600B03DE0 /* AnswerViewController.m */; };
 		81E542C41B6EFCCE0088D901 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 81E542C31B6EFCCE0088D901 /* main.m */; };
 		81E542C71B6EFCCE0088D901 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 81E542C61B6EFCCE0088D901 /* AppDelegate.m */; };
 		81E542CA1B6EFCCE0088D901 /* DifficultyLevelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81E542C91B6EFCCE0088D901 /* DifficultyLevelViewController.m */; };
@@ -39,6 +40,8 @@
 		815A2F051B7E473600B03DE0 /* Player.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
 		815A2F061B7E727800B03DE0 /* QuestionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuestionViewController.h; sourceTree = "<group>"; };
 		815A2F071B7E729600B03DE0 /* QuestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionViewController.m; sourceTree = "<group>"; };
+		815A2F091B7E9FD600B03DE0 /* AnswerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnswerViewController.m; sourceTree = "<group>"; };
+		815A2F0B1B7E9FE000B03DE0 /* AnswerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnswerViewController.h; sourceTree = "<group>"; };
 		81E542BE1B6EFCCE0088D901 /* saywhat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = saywhat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81E542C21B6EFCCE0088D901 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		81E542C31B6EFCCE0088D901 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -75,10 +78,10 @@
 		812421051B7546FE00868CE9 /* models */ = {
 			isa = PBXGroup;
 			children = (
-				815A2F001B7E3F5200B03DE0 /* GameManager.m */,
 				815A2F021B7E3F6600B03DE0 /* GameManager.h */,
-				815A2F031B7E472700B03DE0 /* Player.m */,
+				815A2F001B7E3F5200B03DE0 /* GameManager.m */,
 				815A2F051B7E473600B03DE0 /* Player.h */,
+				815A2F031B7E472700B03DE0 /* Player.m */,
 			);
 			name = models;
 			sourceTree = "<group>";
@@ -111,6 +114,8 @@
 				810E8D681B7C175000F324BB /* PlayerProfileViewController.m */,
 				815A2F061B7E727800B03DE0 /* QuestionViewController.h */,
 				815A2F071B7E729600B03DE0 /* QuestionViewController.m */,
+				815A2F0B1B7E9FE000B03DE0 /* AnswerViewController.h */,
+				815A2F091B7E9FD600B03DE0 /* AnswerViewController.m */,
 				81E542CB1B6EFCCE0088D901 /* Main.storyboard */,
 				81E542CE1B6EFCCE0088D901 /* Images.xcassets */,
 				81E542D01B6EFCCE0088D901 /* LaunchScreen.xib */,
@@ -247,6 +252,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				815A2F0A1B7E9FD600B03DE0 /* AnswerViewController.m in Sources */,
 				810E8D691B7C175000F324BB /* PlayerProfileViewController.m in Sources */,
 				81E542CA1B6EFCCE0088D901 /* DifficultyLevelViewController.m in Sources */,
 				815A2F011B7E3F5200B03DE0 /* GameManager.m in Sources */,

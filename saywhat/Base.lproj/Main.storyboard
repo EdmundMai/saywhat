@@ -156,6 +156,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="nextButtonTapped:" destination="SiA-Mn-jqV" eventType="touchUpInside" id="SPK-Ui-WtL"/>
                                     <segue destination="oM7-Eq-Mqs" kind="push" id="hOk-Nf-Mfs"/>
                                 </connections>
                             </button>
@@ -174,10 +175,10 @@
             </objects>
             <point key="canvasLocation" x="1523" y="72"/>
         </scene>
-        <!--View Controller-->
+        <!--Answer View Controller-->
         <scene sceneID="eiL-Uu-Co4">
             <objects>
-                <viewController id="2fI-Tz-288" sceneMemberID="viewController">
+                <viewController id="2fI-Tz-288" customClass="AnswerViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ne2-oA-uLV"/>
                         <viewControllerLayoutGuide type="bottom" id="HSh-HX-YlN"/>
@@ -186,16 +187,63 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Boom" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TAj-uz-DJ1">
-                                <rect key="frame" x="139" y="189" width="46" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Question Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TAj-uz-DJ1">
+                                <rect key="frame" x="16" y="189" width="288" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rnW-t0-TFv">
+                                <rect key="frame" x="77" y="251" width="167" height="30"/>
+                                <state key="normal" title="Show answer">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showAnswerButtonTapped:" destination="2fI-Tz-288" eventType="touchUpInside" id="n5L-eW-UDK"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Answer Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qgj-8G-3aO">
+                                <rect key="frame" x="16" y="311" width="288" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ET-Dt-qzy">
+                                <rect key="frame" x="57" y="374" width="207" height="124"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="39"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.160998218" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4VQ-Hp-GP3">
+                                <rect key="frame" x="111" y="461" width="98" height="30"/>
+                                <state key="normal" title="Next Question">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="2fI-Tz-288" kind="push" identifier="NextQuestion" id="zxy-Fx-9qa"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="950-Gy-c7y">
+                                <rect key="frame" x="117" y="489" width="86" height="30"/>
+                                <state key="normal" title="Finish Game">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="vXZ-lx-hvc" kind="push" id="Wci-By-tb7"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="abr-TC-1xS"/>
+                    <connections>
+                        <outlet property="answerLabel" destination="qgj-8G-3aO" id="V3b-7B-RTQ"/>
+                        <outlet property="finishGameButton" destination="950-Gy-c7y" id="v4t-8G-cCT"/>
+                        <outlet property="nextQuestionButton" destination="4VQ-Hp-GP3" id="aTT-TP-GbW"/>
+                        <outlet property="questionLabel" destination="TAj-uz-DJ1" id="Duh-Ah-QcC"/>
+                        <outlet property="showAnswerButton" destination="rnW-t0-TFv" id="NGV-zg-UgU"/>
+                        <outlet property="timerLabel" destination="4ET-Dt-qzy" id="8IB-H1-DxI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Vr-98-xo7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -226,6 +274,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="Wci-By-tb7"/>
+        <segue reference="13D-2Z-eO8"/>
         <segue reference="hOk-Nf-Mfs"/>
         <segue reference="ubl-oZ-rwD"/>
     </inferredMetricsTieBreakers>

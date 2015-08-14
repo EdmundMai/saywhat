@@ -17,26 +17,26 @@
 @property (weak, nonatomic) IBOutlet UIButton *nextButton;
 @property (weak, nonatomic) IBOutlet UIButton *finishButton;
 
+@property (weak, nonatomic) GameManager *gameManager;
+@property (weak, nonatomic) Player *currentPlayer;
+
 @end
 
 @implementation QuestionViewController
 
-- (GameManager *)gameManager {
-    return [GameManager sharedInstance];
-}
-
-- (Player *)currentPlayer {
-    return [[self gameManager].players lastObject];
-}
+@synthesize questionCount;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.navigationController setNavigationBarHidden:YES];
+    self.gameManager = [GameManager sharedInstance];
+    self.currentPlayer = [self.gameManager.players lastObject];
+    
     if (!self.questionCount) {
         self.questionCount = (NSUInteger)0;
     }
     
-    if ([[self currentPlayer].answers count] < [[self gameManager].questions count] - 1) {
+    if ([self.currentPlayer.answers count] < [self.gameManager.questions count] - 1) {
         self.nextButton.hidden = NO;
         self.finishButton.hidden = YES;
     } else {
@@ -44,14 +44,13 @@
         self.finishButton.hidden = NO;
     }
     
-    NSString *currentQuestion = [[self gameManager].questions objectAtIndex:self.questionCount];
-    
+    NSString *currentQuestion = [self.gameManager.questions objectAtIndex:self.questionCount];
     self.questionLabel.text = currentQuestion;
 }
 
 - (IBAction)nextButtonTapped:(id)sender {
     NSString *answer = self.answerTextField.text;
-    [[self currentPlayer].answers addObject:answer];
+    [self.currentPlayer.answers addObject:answer];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
