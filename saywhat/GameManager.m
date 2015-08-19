@@ -15,8 +15,6 @@
 
 @implementation GameManager
 
-@synthesize difficultyLevel, players, questions;
-
 + (id)sharedInstance {
     static GameManager *sharedInstance = nil;
     static dispatch_once_t onceToken;
