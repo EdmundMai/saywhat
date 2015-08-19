@@ -24,8 +24,6 @@
 
 @implementation QuestionViewController
 
-@synthesize questionCount;
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.navigationController setNavigationBarHidden:YES];
