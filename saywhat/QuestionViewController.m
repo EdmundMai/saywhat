@@ -24,11 +24,10 @@
 
 @implementation QuestionViewController
 
-@synthesize questionCount;
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.navigationController setNavigationBarHidden:YES];
+    self.answerTextField.delegate = self;
     self.gameManager = [GameManager sharedInstance];
     self.currentPlayer = [self.gameManager.players lastObject];
     
@@ -58,6 +57,14 @@
         QuestionViewController *qvc = (QuestionViewController *)segue.destinationViewController;
         qvc.questionCount = self.questionCount + 1;
     }
+}
+
+#pragma mark - UITextFieldDelegate
+
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return YES;
 }
 
 @end

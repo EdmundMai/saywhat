@@ -8,7 +8,7 @@
 
 #import <UIKit/UIkit.h>
 
-@interface QuestionViewController : UIViewController
+@interface QuestionViewController : UIViewController <UITextFieldDelegate>
 
 @property (nonatomic) NSUInteger questionCount;
 

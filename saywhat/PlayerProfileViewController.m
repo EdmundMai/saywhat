@@ -22,6 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.navigationController setNavigationBarHidden:YES];
+    self.nameTextField.delegate = self;
     self.gameManager = [GameManager sharedInstance];
     
     if ([self.gameManager.players count] < 1) {
@@ -34,6 +35,14 @@
     Player *newPlayer = [[Player alloc] init];
     newPlayer.name = name;
     [self.gameManager.players addObject:newPlayer];
+}
+
+#pragma mark - UITextFieldDelegate
+
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return YES;
 }
 
 @end

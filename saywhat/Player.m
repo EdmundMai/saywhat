@@ -15,8 +15,6 @@
 
 @implementation Player
 
-@synthesize name, answers;
-
 - (id)init {
     if (self = [super init]) {
         self.answers = [[NSMutableArray alloc] init];

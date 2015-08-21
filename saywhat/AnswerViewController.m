@@ -25,8 +25,6 @@
 
 @implementation AnswerViewController
 
-@synthesize questionCount;
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.answerLabel.hidden = YES;
