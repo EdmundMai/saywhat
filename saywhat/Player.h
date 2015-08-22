@@ -7,10 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface Player : NSObject
 
-@property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) UIImage *image;
 @property (nonatomic, strong) NSMutableArray *answers;
 
 @end

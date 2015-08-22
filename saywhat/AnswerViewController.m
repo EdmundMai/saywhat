@@ -20,6 +20,8 @@
 @property (weak, nonatomic) NSTimer *timer;
 @property (weak, nonatomic) IBOutlet UIButton *nextQuestionButton;
 @property (weak, nonatomic) IBOutlet UIButton *finishGameButton;
+@property (weak, nonatomic) IBOutlet UIImageView *playerImage;
+@property (weak, nonatomic) Player *randomPlayer;
 
 @end
 
@@ -43,6 +45,14 @@
     self.questionLabel.text = currentQuestion;
 }
 
+- (Player *)randomPlayer {
+    if (!_randomPlayer) {
+        NSMutableArray *players = self.gameManager.players;
+        _randomPlayer = [players objectAtIndex: arc4random() % [players count]];
+    }
+    return _randomPlayer;
+}
+
 - (void)showNavigationButtons {
     if (self.questionCount < [self.gameManager.questions count] - 1) {
         self.nextQuestionButton.hidden = NO;
@@ -54,6 +64,7 @@
 - (void)updateTimerLabel {
     int countdownTime = [self.timerLabel.text intValue];
     if (countdownTime == 1) {
+        self.playerImage.image = self.randomPlayer.image;
         self.timerLabel.text = @"Time!";
         [self.timer invalidate];
         self.timer = nil;
@@ -65,16 +76,11 @@
 }
 
 - (IBAction)showAnswerButtonTapped:(id)sender {
-//    NSLog(@"Current questionCount: %i", self.questionCount);
     self.showAnswerButton.hidden = YES;
     self.timerLabel.hidden = NO;
-    
     self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateTimerLabel) userInfo:nil repeats:YES];
     
-    NSMutableArray *players = self.gameManager.players;
-    Player *randomPlayer = [players objectAtIndex: arc4random() % [players count]];
-//    NSLog(@"Player answers: %@", randomPlayer.answers);
-    NSString *answer = [randomPlayer.answers objectAtIndex:self.questionCount];
+    NSString *answer = [self.randomPlayer.answers objectAtIndex:self.questionCount];
     self.answerLabel.text = answer;
     self.answerLabel.hidden = NO;
 }

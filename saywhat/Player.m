@@ -6,7 +6,6 @@
 //  Copyright (c) 2015 Edmund Mai. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import "Player.h"
 
 @interface Player ()

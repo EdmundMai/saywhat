@@ -8,9 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PlayerProfileViewController : UIViewController <UITextFieldDelegate>
+@interface PlayerProfileViewController : UIViewController <UIImagePickerControllerDelegate>
 
-@property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 @property (weak, nonatomic) IBOutlet UILabel *questionLabel;
 
 @end
